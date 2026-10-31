@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Yasmine Aura Maryam! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="bgMusic" src="Lover.mp3" loop></audio>
+
+    <!-- Background Elemen Animasi Melayang -->
+    <div class="floating-bg">
+        <span>🎈</span><span>💖</span><span>✨</span><span>🎂</span><span>🌸</span><span>💫</span><span>🎁</span><span>⭐</span>
+    </div>
+
+    <!-- SLIDE 0: TOMBOL ISENG (LARI 4 KALI) -->
+    <div class="slide active" id="slide0">
+        <div class="card-glass animate-pop">
+            <span class="emoji-big">💌</span>
+            <h1>HII Aura Chaniago</h1>
+            <p>Ada surat rahasia spesial nih buat seseorang. Coba klik tombolnya kalau bisa!</p>
+            <button class="btn-kejutan" id="btnKabur">PENCET AKU DONG</button>
+        </div>
+    </div>
+
+    <!-- SLIDE 1: LOGIN NAMA & PASSWORD -->
+    <div class="slide" id="slide1">
+        <div class="card-glass animate-pop">
+            <span class="emoji-big">🔐</span>
+            <h2>Ini aura bukan ya</h2>
+            <p class="subtitle">Masukkan kode rahasia buat buka kejutannya.</p>
+            
+            <div class="input-group">
+                <input type="text" id="inputNama" placeholder="suka aura peyuk(brot brot)">
+            </div>
+            <div class="input-group">
+                <input type="password" id="inputPass" placeholder="suka gedor gedor">
+            </div>
+            
+            <button class="btn-main" onclick="cekLogin()">Buka Kejutan ✨</button>
+            <p class="error-msg" id="errorMsg">Yahh... Baba sama Pengki syedih</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: KERETA LEWAT (SAMBUTAN) -->
+    <div class="slide" id="slide2">
+        <div class="train-container">
+            <div class="rail"></div>
+            <div class="train" id="trainAnim">
+                <div class="train-banner">🎉 HAPPY BIRTHDAY YASMINE AURA MARYAM! 🎂</div>
+                <div class="train-body">🚂 🚃 🚃 🚃 🚃 🚃 🚃 🚃</div>
+            </div>
+        </div>
+        
+        <div class="train-content">
+            <h2>Hore, Berhasil Masuk! 🎉</h2>
+            <p>Kereta kejutan khusus buat kamu nih...</p>
+            
+            <!-- 🎂 TAMBAHAN ANIMASI KUE DI SINI -->
+            <div class="cake-container">
+                <div class="birthday-cake">🎂</div>
+            </div>
+
+            <!-- Tombol diarahkan ke slide 3 -->
+            <button class="btn-main" onclick="gantiSlide(3)">Ada apa ya</button>
+        </div>
+    </div>
+
+   <!-- SLIDE 3: CHAT WHATSAPP DI DALAM LAYAR HP -->
+    <div class="slide slide-hp-container" id="slide3">
+        <div class="card-glass center-box">
+            <h2>Chat Rahasia Spesial</h2>
+            <p class="subtitle">Flashback 22 Juni 2026: Dikerjain link Silly</p>
+
+            <!-- MOCKUP LAYAR HP -->
+            <div class="phone-frame">
+                <!-- Notch / Kamera Depan HP -->
+                <div class="phone-notch"></div>
+                
+                <!-- Header WhatsApp -->
+                <div class="wa-header">
+                    <div class="wa-contact-info">
+                        <span class="wa-avatar">👑</span>
+                        <div class="wa-name-status">
+                            <strong>Aura Chaniago</strong>
+                            <span class="wa-status">online</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Isi Ruang Chat -->
+                <div class="wa-chat-body">
+                    <div class="wa-date-badge">22 Juni 2026</div>
+
+                    <!-- Pesan 1 (Kamu ngasih link remedial ke Aura) -->
+                    <div class="wa-message sent">
+                        <p>Aura, ini link nilai ulangan lu, ada yang remed: <span style="color: #0066cc; text-decoration: underline;">https://raffamarcelino12-
+                            cloud.github.io
+                            /RemedialAura/</span> 📚</p>
+                        <span class="wa-time">08:00</span>
+                    </div>
+
+                    <!-- Pesan 2 (Aura membalas karena curiga/panik) -->
+                    <div class="wa-message received">
+                        <p>HAH SERIUSAN, Kok bisa</p>
+                        <span class="wa-time">08:01</span>
+                    </div>
+
+                    <!-- Pesan 3 (Kamu bales pas dibuka isinya ultah) -->
+                    <div class="wa-message sent">
+                        <p>Gatauu, coba aja liat deh</p>
+                        <span class="wa-time">08:02</span>
+                    </div>
+
+                    <!-- Pesan 4 (Aura ngambek tapi gemes) -->
+                        <div class="wa-message received">
+                        <p>Ih sialan banget dikerjain pagi-pagi! udah kaget banget kok nilainya bisa ke sebar, makasih ya</p>
+                        <span class="wa-time">08:03</span>
+                    </div>
+                </div>
+
+                <!-- Footer WhatsApp (Input Chat) -->
+                <div class="wa-footer">
+                    <span>Ketik pesan...</span>
+                    <span class="wa-send-icon">🎤</span>
+                </div>
+            </div>
+
+            <!-- Tombol Navigasi -->
+            <div style="display: flex; gap: 10px; width: 100%; margin-top: 20px;">
+                <button class="btn-secondary" onclick="gantiSlide(2)">⬅</button>
+                <button class="btn-main" onclick="gantiSlide(4)">Lanjut</button>
+            </div>
+        </div>
+    </div>
+    <!-- SLIDE 4: GALERI FOTO BERGULIR (MARQUEE) -->
+    <div class="slide slide-gallery" id="slide4">
+        <div class="gallery-header">
+            <h2>🎞️ Flashback Kenangan Kita</h2>
+            <p>Momen berharga penuh cerita ✨</p>
+        </div>
+        
+        <!-- Wadah Efek Berjalan -->
+        <div class="marquee-container">
+            <!-- Baris 1: Bergerak dari Kanan ke Kiri -->
+            <div class="marquee-row marquee-left" id="rowLeft">
+                <!-- Data foto digenerate otomatis lewat JS -->
+            </div>
+
+            <!-- Baris 2: Bergerak dari Kiri ke Kanan -->
+            <div class="marquee-row marquee-right" id="rowRight">
+                <!-- Data foto digenerate otomatis lewat JS -->
+            </div>
+        </div>
+
+        <button class="btn-main" onclick="gantiSlide(5)">Lanjut ke Surat Spesial 💌</button>
+        <button class="btn-secondary" style="margin-top: 25px;" onclick="gantiSlide(3)">⬅</button>
+    </div>
+
+    <!-- Script Generate Foto Berjalan -->
+    <script>
+        const rowLeft = document.getElementById('rowLeft');
+        const rowRight = document.getElementById('rowRight');
+
+        if (rowLeft && rowRight) {
+            // Kita buat 10 foto untuk baris atas, 10 foto untuk baris bawah (total 20 foto)
+            // Duplikat elemen di dalam loop agar efek gulirnya mulus tanpa terputus (infinite loop)
+            for (let i = 1; i <= 10; i++) {
+                rowLeft.innerHTML += `
+                    <div class="photo-card">
+                        <img src="https://picsum.photos/seed/yasmineA${i}/200/200" alt="Kenangan ${i}">
+                        <span>Momen #${i}</span>
+                    </div>
+                `;
+                rowRight.innerHTML += `
+                    <div class="photo-card">
+                        <img src="https://picsum.photos/seed/yasmineB${i}/200/200" alt="Kenangan ${i+10}">
+                        <span>Momen #${i+10}</span>
+                    </div>
+                `;
+            }
+            // Gandakan isinya sekali lagi agar animasi gulirnya tidak ada jeda kosong
+            rowLeft.innerHTML += rowLeft.innerHTML;
+            rowRight.innerHTML += rowRight.innerHTML;
+        }
+    </script>
+    
+<!-- SLIDE 5: KUIS TRIVIA KENANGAN -->
+    <div class="slide" id="slide5">
+        <div class="card-glass center-box" style="max-width: 420px;">
+            <h2 style="color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">🧠 Kuis Seberapa Jago?</h2>
+            <p class="subtitle" style="color: rgba(255,255,255,0.9);">Coba jawab pertanyaan ini dulu ya! 😉</p>
+
+            <div class="quiz-container">
+                <p id="questionText" style="font-weight: 600; margin-bottom: 15px;">1. Apa makanan yang paling sering kita pesen pas lagi jalan bareng?</p>
+                
+                <div class="quiz-options" style="display: flex; flex-direction: column; gap: 10px;" id="quizOptions">
+                    <button class="btn-quiz" onclick="cekJawaban(false)">A. Seblak Auni</button>
+                    <button class="btn-quiz" onclick="cekJawaban(true)">B. Lazatos</button>
+                    <button class="btn-quiz" onclick="cekJawaban(false)">C. Bakso Taman</button>
+                </div>
+                <p id="quizFeedback" style="margin-top: 15px; font-weight: 600; text-align: center; min-height: 24px; text-shadow: 0 1px 3px rgba(0,0,0,0.3);"></p>
+            </div>
+
+            <div style="display: flex; gap: 10px; width: 100%; margin-top: 10px;">
+                <button class="btn-secondary" onclick="gantiSlide(4)">⬅</button>
+                <button class="btn-main" id="btnNextQuiz" onclick="gantiSlide(6)" style="opacity: 0.5; pointer-events: none;">Lanjut ke Surat 💌</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: SURAT SPESIAL & FOTO VERTIKAL KIRI-KANAN -->
+    <div class="slide slide-surat" id="slide6">
+        <!-- Foto Bergerak Vertikal Sisi Kiri (Atas ke Bawah) -->
+        <div class="vertical-marquee-container vertical-left">
+            <div class="vertical-row" id="vertLeft">
+                <!-- Foto digenerate lewat JS -->
+            </div>
+        </div>
+
+        <!-- Foto Bergerak Vertikal Sisi Kanan (Bawah ke Atas) -->
+        <div class="vertical-marquee-container vertical-right">
+            <div class="vertical-row" id="vertRight">
+                <!-- Foto digenerate lewat JS -->
+            </div>
+        </div>
+
+        <!-- Kartu Surat Utama di Tengah -->
+        <div class="card-glass surat-box">
+            <h2>💌 Untuk Yasmine Aura Maryam</h2>
+            <div class="surat-content">
+                <p>Hai kecayang mamamama,<br><br>
+                Selamat ulang tahun ya! Gak terasa udah nambah umur lagi. Makasih udah jadi seseorang yang selalu bikin hari-hari penuh warna, aku seneng deh bisa ketemu kenal dan dekat sama kamu<br><br>
+                Semoga di umur yang baru ini, semua impian kamu, hal-hal baik, dan apa pun yang lagi di semogakan bisa tercapai satu persatu. Tetap jadi Aura yang ceria, hebat, dan bahagia ya! aku sayang kamu<br><br>
+                <i>With all my love,</i><br>
+                <strong>- marcel</strong></p>
+            </div>
+
+            <div style="display: flex; gap: 10px; width: 100%; margin-top: 20px;">
+                <button class="btn-main" onclick="gantiSlide(5)">⬅</button>
+                <button class="btn-main" onclick="gantiSlide(7)">hayo</button>
+            </div>
+        </div>
+    </div>
+
+</button>
+<script src="script.js"></script>
+
+<!-- Script Generate Foto Vertikal untuk Slide 6 -->
+    <script>
+        const vertLeft = document.getElementById('vertLeft');
+        const vertRight = document.getElementById('vertRight');
+
+        if (vertLeft && vertRight) {
+            // Masukkan foto untuk sisi kiri & kanan (Bisa pakai picsum dulu atau diganti nama file foto kamu misal foto1.jpg)
+            for (let i = 1; i <= 6; i++) {
+                vertLeft.innerHTML += `
+                    <div class="photo-card-vert">
+                        <img src="https://picsum.photos/seed/vertA${i}/150/150" alt="Foto Kiri ${i}">
+                    </div>
+                `;
+                vertRight.innerHTML += `
+                    <div class="photo-card-vert">
+                        <img src="https://picsum.photos/seed/vertB${i}/150/150" alt="Foto Kanan ${i}">
+                    </div>
+                `;
+            }
+            // Gandakan isinya agar animasi vertikalnya berputar mulus tanpa jeda kosong
+            vertLeft.innerHTML += vertLeft.innerHTML;
+            vertRight.innerHTML += vertRight.innerHTML;
+        }
+    </script>
+
+    <!-- SLIDE 6: KUPON SPESIAL / JANJI MANIS -->
+    <div class="slide" id="slide7">
+        <div class="card-glass center-box" style="max-width: 420px;">
+            <h2>🎟️ Kupon Spesial Untuk Yasmine</h2>
+            <p class="subtitle">Klik kuponnya buat diklaim ke Baba kapan aja! ✨</p>
+
+            <div class="coupon-grid" style="display: grid; grid-template-columns: 1fr; gap: 10px; margin: 15px 0; width: 100%;">
+                <div class="coupon-card" onclick="klaimKupon(this)" style="background: rgba(255,255,255,0.7); padding: 12px; border-radius: 12px; border: 2px dashed #ff6b81; cursor: pointer; transition: 0.3s;">
+                    <strong>🎫 Kupon rahasia</strong>
+                    <p style="font-size: 0.8rem; color: #666; margin: 4px 0 0 0;">(Klik untuk klaim!)</p>
+                </div>
+                <div class="coupon-card" onclick="klaimKupon(this)" style="background: rgba(255,255,255,0.7); padding: 12px; border-radius: 12px; border: 2px dashed #ff6b81; cursor: pointer; transition: 0.3s;">
+                    <strong>🎫 Kupon rahasia 2</strong>
+                    <p style="font-size: 0.8rem; color: #666; margin: 4px 0 0 0;">(Klik untuk klaim!)</p>
+                </div>
+                <div class="coupon-card" onclick="klaimKupon(this)" style="background: rgba(255,255,255,0.7); padding: 12px; border-radius: 12px; border: 2px dashed #ff6b81; cursor: pointer; transition: 0.3s;">
+                    <strong>🎫 Kupon rahasia 3</strong>
+                    <p style="font-size: 0.8rem; color: #666; margin: 4px 0 0 0;">(Klik untuk klaim!)</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; width: 100%; margin-top: 10px;">
+                <button class="btn-secondary" onclick="gantiSlide(6)">⬅</button>
+                <button class="btn-main" onclick="gantiSlide(8)">🎂</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: TIUP LILIN & PENUTUP (CLEAN & BIG CAKE) -->
+    <div class="slide" id="slide8">
+        <div class="center-box clean-end-screen">
+            <h2 class="end-title">Make a Wish, Aura! 🎂</h2>
+            
+            <!-- Kue Lebih Besar & Interaktif -->
+            <div id="cakeArea" class="big-cake-container" onclick="tiupLilin()">
+                <div class="big-cake">🎂</div>
+                <div id="flame" class="big-flame">🔥</div>
+            </div>
+            <p id="wishText" class="wish-instruction">(Sentuh kuenya untuk tiup lilin! 💨)</p>
+
+            <!-- Teks Ucapan Efek Mengetik -->
+            <div class="typing-container">
+                <p id="typedMessage" class="typed-text"></p>
+            </div>
+
+            <div style="display: flex; gap: 15px; width: 100%; max-width: 300px; margin-top: 25px; z-index: 10;">
+                <button class="btn-secondary" onclick="gantiSlide(7)">⬅️ Kembali</button>
+                <button class="btn-main" onclick="kirimWhatsApp()">Kirim Pesan ke WA 💬</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
